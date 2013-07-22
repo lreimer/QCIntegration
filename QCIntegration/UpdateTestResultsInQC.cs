@@ -45,9 +45,6 @@ namespace oneshore.QCIntegration
             }
 
             log.Info("total # of tests updated: " + qc.testCount);
-
-            Console.Out.Write("press <NE> key to continue");
-            Console.ReadKey();
         }
 
 
