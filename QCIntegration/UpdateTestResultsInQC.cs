@@ -21,38 +21,82 @@ namespace oneshore.QCIntegration
         public static string qcTestName { get; set; }
 
         public static string testResultsFile { get; set; }
+        public static string testResultsPath { get; set; }
         public static char DELIMITER { get; set; }
 
-        public static Dictionary<string, string> results;
         private static Logger log = NLog.LogManager.GetCurrentClassLogger();
-
-
 
         static void Main(string[] args)
         {
-            log.Debug("starting QCIntegration");
+            log.Debug("Starting QCIntegration...");
 
-            getConfig();
-            results = getTestResultsFromFile(testResultsFile);
+            initialize();            
+            string[] testResultsFiles = getTestResultsFiles();            
 
             QCController qc = new QCController();
             qc.connectToQC(qcUrl, qcDomain, qcProject, qcLoginName, qcPassword);
 
-            List tsTestSetList = qc.retrieveTestSets(qcPath, qcTestSetName);
-            foreach (TestSet testSet in tsTestSetList)
+            Dictionary<string, string> results;
+            foreach (string testResultsFile in testResultsFiles)
             {
-                qc.recordTestSetResults(testSet, results);
+                results = getTestResultsFromFile(testResultsFile);
+                string tsName = getTestSetName(testResultsFile);
+                List tsTestSetList = qc.retrieveTestSets(qcPath, qcTestSetName);
+                foreach (TestSet testSet in tsTestSetList)
+                {
+                    qc.recordTestSetResults(testSet, results);
+                }
             }
 
-            log.Info("total # of tests updated: " + qc.testCount);
+            log.Info("Total # of tests updated: " + qc.testCount);
         }
 
+        private static string getTestSetName(string testResultsFile)
+        {
+            if (!String.IsNullOrEmpty(qcTestSetName))
+            {
+                return qcTestSetName;
+            }
+            else
+            {
+                return Path.GetFileNameWithoutExtension(testResultsFile);
+            }
 
+        }
+
+        private static string[] getTestResultsFiles()
+        {
+            string[] testResultsFiles;
+            if (!String.IsNullOrEmpty(testResultsFile))
+            {
+                testResultsFiles = new string[1];
+                testResultsFiles[0] = testResultsFile;
+            }
+            else if (!String.IsNullOrEmpty(testResultsPath))
+            {
+                bool isResultsDir = (File.GetAttributes(testResultsPath) & FileAttributes.Directory) == FileAttributes.Directory;
+                if (isResultsDir)
+                {
+                    testResultsFiles = Directory.GetFiles(testResultsPath, "*.csv");
+                }
+                else
+                {
+                    testResultsFiles = new string[1];
+                    testResultsFiles[0] = testResultsPath;
+                }
+            }
+            else
+            {
+                testResultsFiles = new string[0];
+            }
+            
+            return testResultsFiles;
+        }
 
         /**
          * read configuration data from App.config into variables
          */
-        static void getConfig()
+        private static void initialize()
         {
             // new (.NET 4.0) wants ConfigurationManager
             // older (.NET 3.5) wants ConfigurationSettings
@@ -68,6 +112,8 @@ namespace oneshore.QCIntegration
             qcTestName = ConfigurationManager.AppSettings["qcTestName"];
 
             testResultsFile = ConfigurationManager.AppSettings["testResultsFile"];
+            testResultsPath = ConfigurationManager.AppSettings["testResultsPath"];
+
             DELIMITER = ConfigurationManager.AppSettings["delimiter"][0];
         }
 
