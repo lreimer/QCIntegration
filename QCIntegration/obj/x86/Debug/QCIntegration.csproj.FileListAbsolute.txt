@@ -41,11 +41,3 @@ C:\aaron\projects\QCIntegration\QCIntegration\bin\Debug\NLog.dll
 C:\aaron\projects\QCIntegration\QCIntegration\bin\Debug\NLog.pdb
 C:\aaron\projects\QCIntegration\QCIntegration\bin\Debug\NLog.xml
 C:\aaron\projects\QCIntegration\QCIntegration\obj\x86\Debug\QCIntegration.csprojResolveAssemblyReference.cache
-X:\codebase\QCIntegration\QCIntegration\bin\Debug\NLog.config
-X:\codebase\QCIntegration\QCIntegration\bin\Debug\QCIntegration.exe.config
-X:\codebase\QCIntegration\QCIntegration\bin\Debug\QCIntegration.exe
-X:\codebase\QCIntegration\QCIntegration\bin\Debug\QCIntegration.pdb
-X:\codebase\QCIntegration\QCIntegration\obj\x86\Debug\Interop.TDAPIOLELib.dll
-X:\codebase\QCIntegration\QCIntegration\obj\x86\Debug\QCIntegration.csproj.ResolveComReference.cache
-X:\codebase\QCIntegration\QCIntegration\obj\x86\Debug\QCIntegration.exe
-X:\codebase\QCIntegration\QCIntegration\obj\x86\Debug\QCIntegration.pdb

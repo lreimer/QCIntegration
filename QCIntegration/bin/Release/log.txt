@@ -1,2 +1,6 @@
 2011-11-16 14:19:21.9564|DEBUG|oneshore.QCIntegration.UpdateTestResultsInQC|starting QCIntegration
 2011-11-16 14:19:21.9720|DEBUG|oneshore.QCIntegration.UpdateTestResultsInQC|reading file: C:\temp\testresults.csv
+2013-07-23 15:24:57.2254|DEBUG|oneshore.QCIntegration.UpdateTestResultsInQC|Starting QCIntegration...
+2013-07-23 15:24:57.2424|DEBUG|oneshore.QCIntegration.QCController|Creating TD connection.
+2013-07-23 15:24:57.3754|WARN|oneshore.QCIntegration.QCController|unable to connect to project in QC
+2013-07-23 15:24:57.3754|WARN|oneshore.QCIntegration.QCController|Klasse nicht registriert (Ausnahme von HRESULT: 0x80040154 (REGDB_E_CLASSNOTREG))
