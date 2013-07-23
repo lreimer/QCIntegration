@@ -30,3 +30,13 @@ C:\Temp\QCIntegration\QCIntegration\bin\Release\QCIntegration.pdb
 C:\Temp\QCIntegration\QCIntegration\bin\Release\NLog.dll
 C:\Temp\QCIntegration\QCIntegration\bin\Release\NLog.xml
 C:\Temp\QCIntegration\QCIntegration\obj\x86\Release\ResolveAssemblyReference.cache
+X:\codebase\QCIntegration\QCIntegration\bin\Release\NLog.config
+X:\codebase\QCIntegration\QCIntegration\bin\Release\QCIntegration.exe.config
+X:\codebase\QCIntegration\QCIntegration\bin\Release\QCIntegration.exe
+X:\codebase\QCIntegration\QCIntegration\bin\Release\QCIntegration.pdb
+X:\codebase\QCIntegration\QCIntegration\bin\Release\NLog.xml
+X:\codebase\QCIntegration\QCIntegration\obj\x86\Release\QCIntegration.csprojResolveAssemblyReference.cache
+X:\codebase\QCIntegration\QCIntegration\obj\x86\Release\Interop.TDAPIOLELib.dll
+X:\codebase\QCIntegration\QCIntegration\obj\x86\Release\QCIntegration.csproj.ResolveComReference.cache
+X:\codebase\QCIntegration\QCIntegration\obj\x86\Release\QCIntegration.exe
+X:\codebase\QCIntegration\QCIntegration\obj\x86\Release\QCIntegration.pdb
