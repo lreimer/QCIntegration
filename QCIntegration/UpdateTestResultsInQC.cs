@@ -135,7 +135,7 @@ namespace oneshore.QCIntegration
         {
             log.Debug("reading file: " + filename);
             Dictionary<string, string> results = new Dictionary<string, string>();
-            string[] lines = File.ReadAllLines(filename);
+            string[] lines = File.ReadAllLines(filename, System.Text.Encoding.UTF8);
 
             if (!File.Exists(filename))
             {
