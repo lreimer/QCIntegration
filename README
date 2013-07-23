@@ -13,7 +13,8 @@ To use QCIntegration.exe, first modify QCIntegration.exe.config to specify the l
 	qcPath          - path to the TestLab folder in QC -- start with "\Root\"
 	qcTestSetName   - optional, not used in current configuration
 	qcTestName      - optional, not used in current configuration
-	testResultsFile - this file contains a mapping of QC Test Names and Statuses
+	testResultsFile - optional, this file contains a mapping of QC Test Names and Statuses, imports single CSV file 
+	testResultsPath - optional, used to bulk import CSV files in given directory, the filename is used as qcTestSetName value
 	delimeter       - used when parsing the testResultsFile (typically a comma ",")
 
 The project App.config contains defaults and is compiled to include bogus QC info.  It won't work on your server unless you modify qcHostname, qcUrl, qcDomain, qcProject, qcLogin, and qcPassword.
